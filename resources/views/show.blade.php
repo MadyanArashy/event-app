@@ -11,31 +11,12 @@
 
             <div class="mt-6 sm:mt-8 lg:mt-0">
               <h1
-                class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white"
+                class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white mb-1"
               >
                 {{ $event->name }}
               </h1>
-                <p
-                  class="text-xl text-gray-900 sm:text-2xl dark:text-white"
-                >
-                @php
-                if ($event->date > date("Y-m-d")) {
-                    $available = 'Tersedia';
-                    $checkmark = '&#10003;'; // Checkmark
-                } else {
-                    $available = 'Habis';
-                    $checkmark = '&#10060;'; // Cross mark
-                }
-                @endphp
 
-                <span class="text-gray-50 select-none text-nowrap mr-5
-                    @if ($available == 'Tersedia') text-green-500
-                    @elseif ($available == 'Habis') text-red-500
-                    @else text-gray-400 @endif">
-                    {{ $available }} {!! $checkmark !!}
-                </span>
-
-                </p>
+                <x-status-button :available="($event->date > date('Y-m-d'))"/>
 
               <div class="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
                 <button

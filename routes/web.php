@@ -11,9 +11,7 @@ Route::get('/', function () {
 
 // Semua halaman
 Route::middleware('auth')->group(function () {
-    Route::get('dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('dashboard', [EventController::class, 'dashboard'])->name('dashboard');
     Route::get('events', [EventController::class, 'index'])->name('events.index');
     Route::get('events', [EventController::class, 'show'])->name('events.show');
 

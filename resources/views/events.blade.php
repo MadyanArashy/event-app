@@ -17,22 +17,10 @@
         </td>
         <td class="px-4 py-3">{{ $data->location }}</td>
         <td class="px-4 py-3 max-w-lg">
-            <img src="storage/{{ $data->image }}" alt="Tidak ditemukan" class="min-w-24 lg:w-[75%]">
+            <img src="storage/{{ $data->image }}" alt="Tidak ditemukan" class="min-w-24 lg:w-[75%] max-h-48 lg:max-h-56 object-cover">
         </td>
-        @php
-            if ($data->date > date("Y-m-d")) {
-                $available = 'Tersedia';
-            } else {
-                $available = 'Habis';
-            }
-        @endphp
         <td class="px-4 py-3">
-            <span class="badge text-gray-50 px-4 py-2 rounded-full select-none text-nowrap mr-5
-                @if ($available == 'Tersedia') bg-green-900
-                @elseif ($available == 'Habis') bg-red-900
-                @else bg-gray-400 @endif">
-                {{ $available }}
-            </span>
+            <x-status-button :available="($data->date > date('Y-m-d'))"/>
         </td>
     </tr>
     @endforeach
