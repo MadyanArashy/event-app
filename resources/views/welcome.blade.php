@@ -253,7 +253,7 @@
             <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight dark:text-white md:max-w-2xl md:text-5xl xl:text-6xl">Aplikasi CRUD Event</h1>
             <h3 class="mb-4 text-2xl tracking-tight font-bold text-gray-900 dark:text-white">Membuat, Membaca, Mengubah dan Menghapus event.</h3>
             @if(Auth::user() !== null)
-            <a href="{{ route('events') }}" class="inline-block rounded-lg bg-primary-700 px-6 py-3.5 text-center font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Shop Now</a>
+            <a href="{{ route('events.index') }}" class="inline-block rounded-lg bg-primary-700 px-6 py-3.5 text-center font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Lihat Events</a>
             @else
             <button
             id="loginModalButton" data-modal-target="loginModal" data-modal-toggle="loginModal" type="button"

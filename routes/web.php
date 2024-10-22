@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -13,9 +14,10 @@ Route::middleware('auth')->group(function () {
     Route::get('dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::get('events', function () {
-        return view('events');
-    })->name('events');
+    Route::get('events', [EventController::class, 'index'])->name('events.index');
+    Route::get('events', [EventController::class, 'show'])->name('events.show');
+
+    Route::resource('events', EventController::class);
 });
 
 // Group untuk profile yang memerlukan autentikasi

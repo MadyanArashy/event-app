@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('image');
             $table->string('location');
         });
+        // Here's the magic
+        \DB::statement('ALTER TABLE events AUTO_INCREMENT = 1000;');
     }
 
     /**

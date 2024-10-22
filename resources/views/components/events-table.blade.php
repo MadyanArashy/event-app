@@ -1,5 +1,4 @@
 <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
-    <h1 class="font-black text-4xl text-center dark:text-gray-100 mb-3 mono">Laporan Siswa</h1>
     <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
         <!-- Start coding here -->
         <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
@@ -25,14 +24,12 @@
                         Add product
                     </button> --}}
                     <!-- Modal toggle -->
-                @if(request()->routeIs('siswa.index'))
-                <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="flex items-center justify-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800" type="button">
+                <button data-modal-target="create-table" data-modal-toggle="create-table" class="flex items-center justify-center text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" type="button">
                     <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path clip-rule="evenodd" fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
                     </svg>
-                    Laporkan Siswa
+                    Tambahkan Event
                 </button>
-                @endif
 
                 </div>
             </div>
@@ -41,11 +38,10 @@
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                     <th scope="col" class="px-4 py-3">No</th>
-                    <th scope="col" class="px-4 py-3">Pelapor</th>
-                    <th scope="col" class="px-4 py-3">Terlapor</th>
-                    <th scope="col" class="px-4 py-3">Kelas</th>
-                    <th scope="col" class="px-4 py-3">Laporan</th>
-                    <th scope="col" class="px-4 py-3">Bukti</th>
+                    <th scope="col" class="px-4 py-3">Nama</th>
+                    <th scope="col" class="px-4 py-3">Tanggal</th>
+                    <th scope="col" class="px-4 py-3">Lokasi</th>
+                    <th scope="col" class="px-4 py-3">Foto</th>
                     <th scope="col" class="px-4 py-3 w-1">Status</th>
                         </tr>
                     </thead>
@@ -54,7 +50,7 @@
                     </tbody>
                 </table>
                     <!-- Modal Create -->
-                <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div id="create-table" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                     <div class="relative p-4 w-full max-w-2xl max-h-full">
                         <!-- Modal content -->
                         <x-create></x-create>

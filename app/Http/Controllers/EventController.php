@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class EventController extends Controller
 {
@@ -12,15 +13,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $events = Event::all();
+        return view('events', compact('events'));
     }
 
     /**
@@ -28,15 +22,35 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string',
+            'location' => 'required|string',
+            'date' => 'required|date',
+            'image' => 'required|image|mimes:jpeg,jpg,png,svg,webp|max:2048',
+            'desc' => 'required|string',
+        ]);
+
+        $image = $request->file('image')->store('events', 'public');
+
+        Event::create([
+            'name' => $request->name,
+            'desc' => $request->desc,
+            'date' => $request->date,
+            'image' => $image,
+            'location' => $request->location,
+        ]);
+
+        return redirect('events');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Event $event)
+    public function show(string $id)
     {
-        //
+        $event = Event::findOrFail($id);
+
+        return view('show', compact('event'));
     }
 
     /**
