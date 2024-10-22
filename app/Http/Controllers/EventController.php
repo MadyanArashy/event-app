@@ -13,17 +13,49 @@ class EventController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function dashboard()
+    public function dashboard(Request $request)
     {
-        $events = Event::all();
-        return view('dashboard', compact('events'));
+        //Get the total count for all events
+    $total = count(Event::all());
+        // Get the search query from the request
+    $search = $request->input('search');
+
+    // If search query is present, filter the events
+    if ($search) {
+        $events = Event::where('name', 'like', '%' . $search . '%')
+            ->orWhere('location', 'like', '%' . $search . '%')
+            ->latest()
+            ->paginate(10);
+    } else {
+        // If no search query, just return all events
+        $events = Event::latest()->paginate(10);
     }
 
-    public function index()
-    {
-        $events = Event::all();
-        return view('events', compact('events'));
+    return view('dashboard', compact('events', 'total'));
     }
+
+    public function index(Request $request)
+    {
+    //Get the total count for all events
+    $total = count(Event::all());
+
+    // Get the search query from the request
+    $search = $request->input('search');
+
+    // If search query is present, filter the events
+    if ($search) {
+        $events = Event::where('name', 'like', '%' . $search . '%')
+            ->orWhere('location', 'like', '%' . $search . '%')
+            ->latest()
+            ->paginate(10);
+    } else {
+        // If no search query, just return all events
+        $events = Event::latest()->paginate(10);
+    }
+
+    return view('events', compact('events', 'total'));
+}
+
 
     /**
      * Store a newly created resource in storage.
@@ -119,8 +151,12 @@ class EventController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Event $event)
+    public function destroy(Event $event): RedirectResponse
     {
-        //
+        Storage::delete('storage/events/' . $event->image);
+
+        $event->delete();
+
+        return redirect()->route('events.index')->with(['deletion' => 'event berhasil dihapus!']);
     }
 }

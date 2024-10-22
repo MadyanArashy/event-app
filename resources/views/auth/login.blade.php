@@ -12,13 +12,18 @@
     </div>
 
     <!-- Password -->
-    <div class="mt-4">
+    <div class="mt-4 mb-4 relative">
         <x-input-label for="password" :value="__('Password')" />
 
-        <x-text-input id="password" class="block mt-1 w-full"
-                        type="password"
-                        name="password"
-                        required autocomplete="current-password" />
+        <div class="flex item-center-relative">
+            <x-text-input id="loginpassword" class="block mt-1 w-full"
+                            type="password"
+                            name="password"
+                            required autocomplete="current-password" />
+            <button type="button" class="absolute inset-y-0 right-1 flex items-center pl-3 -mb-6" onclick="togglePassword(document.getElementById('loginpassword'), document.getElementById('toggleLoginPasswordIcon'))">
+                <i id="toggleLoginPasswordIcon" class="far fa-eye me-3 dark:text-gray-400 text-gray-600"></i>
+            </button>
+        </div>
 
         <x-input-error :messages="$errors->get('password')" class="mt-2" />
     </div>

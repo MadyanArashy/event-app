@@ -11,6 +11,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/cbd855a2c0.js" crossorigin="anonymous"></script>
 
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="{{url('storage/apple-touch-icon.png')}}">
@@ -40,5 +41,22 @@
                 {{ $slot }}
             </main>
         </div>
+        <script>
+            function togglePassword(passwordField, togglePasswordIcon) {
+
+if (passwordField.type === "password") {
+    passwordField.type = "text";
+    // passwordField.style.fontSize = "20px";
+    togglePasswordIcon.classList.remove("fa-eye");
+    togglePasswordIcon.classList.add("fa-eye-slash");
+} else {
+    passwordField.type = "password";
+    // passwordField.style.fontSize = "initial";
+    togglePasswordIcon.classList.remove("fa-eye-slash");
+    togglePasswordIcon.classList.add("fa-eye");
+}
+}
+
+        </script>
     </body>
 </html>

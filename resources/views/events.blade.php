@@ -4,7 +4,7 @@
             {{ __('Tabel Event') }}
         </h2>
     </x-slot>
-<x-events-table>
+<x-events-table :count="count($events)" :total="$total">
     @foreach($events as $data)
     <tr class="border-b dark:border-gray-700 cursor-pointer hover:text-gray-700 dark:hover:text-gray-100" onclick="window.location.href='{{ route('events.show', $data->id) }}';">
         <td class="px-4 py-3">{{ $loop->iteration }}</td>
