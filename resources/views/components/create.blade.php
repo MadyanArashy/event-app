@@ -9,7 +9,7 @@
               <input type="text" name="name" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Tuliskan nama" required="">
           </div>
           <div class="w-full">
-              <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> Lokasi <span class="text-red-500" aria-disabled="true">*</span></label>
+              <label for="location" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> Lokasi <span class="text-red-500" aria-disabled="true">*</span></label>
               <input type="text" name="location" id="brand" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" placeholder="Jl. Poras no. 19" required="">
           </div>
           <div class="w-full">
