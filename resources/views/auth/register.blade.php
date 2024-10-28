@@ -50,10 +50,10 @@
 
     <div class="flex items-center justify-end mt-4 gap-3">
         <button
-        id="loginModalButton" data-modal-target="loginModal" data-modal-hide="registerModal" data-modal-toggle="loginModal" type="button"
-        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+        id="loginrModalButton" data-modal-target="loginrModal" data-modal-hide="loginModal" data-modal-toggle="loginrModal" type="button"
+        class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
         >
-        Login
+        {{__('Sudah punya akun?')}}
         </button>
 
         <x-primary-button class="ms-4">

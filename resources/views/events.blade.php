@@ -13,7 +13,7 @@
             @php
                 $date = date_create($data->date)
             @endphp
-            {{ date_format($date, 'D-M-Y') }}
+            {{ date_format($date, 'd/M/Y') }}
         </td>
         <td class="px-4 py-3">{{ $data->location }}</td>
         <td class="px-4 py-3 max-w-lg">

@@ -60,7 +60,7 @@
                         @php
                         $date = date_create($data->date)
                         @endphp
-                        {{ date_format($date, 'D-M-Y') }}
+                        {{ date_format($date, 'd M Y') }}
                     </p>
                   </li>
                   <li class="items-center gap-2">
