@@ -1,9 +1,9 @@
 <h1 align="center">Pengaduan Siswa</h1>
 
 ### Konten:
-- [Deskripsi](#deskripsi-)
-- [Fitur-FItur](#fitur-fitur-)
-- [Proses Cloning dan Instalasi](#proses-cloning-dan-instalasi-)
+- [Deskripsi](#deskripsi)
+- [Fitur-FItur](#fitur-fitur)
+- [Proses Cloning dan Instalasi](#proses-cloning-dan-instalasi)
 
 ## Deskripsi
 **Pengaduan Siswa** adalah sebuah aplikasi web yang dirancang untuk memfasilitasi siswa dalam melaporkan pengaduan atau masalah yang mereka hadapi di lingkungan sekolah. Aplikasi ini memungkinkan siswa untuk dengan mudah menyampaikan keluhan secara online yang kemudian dapat direspon oleh pihak sekolah dengan lebih cepat dan terstruktur.
